@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestUnitExcelWriter
+namespace ExcelBridgeTestUnit
 {
     [TestClass]
     public class BenchmarkTest
@@ -19,9 +19,14 @@ namespace TestUnitExcelWriter
 
         [TestMethod]
         public void Debit_WhenAmountIsMoreThanBalance_ShouldThrowArgumentOutOfRange()
-        { // 
-            StringAssert.Contains("Test", "Test");
+        {
+            WriterService writer = new WriterService();
 
+            for (uint i = 0; i < 100; i++)
+            {
+                writer.UpdateCell("TestGraphe.xlsx", "insertByDotnet", i, "A");
+                Console.WriteLine("Current line : " + i);
+            }
         }
 
         [TestCleanup]

@@ -8,7 +8,7 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 
-namespace ExcelWriter.Writer
+namespace ExcelBridgeApi.Writer
 {
     class WriterService
     {
