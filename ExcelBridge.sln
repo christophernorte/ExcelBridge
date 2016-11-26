@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeCli", "ExcelBridgeCLI\ExcelBridgeCli.csproj", "{860C74E8-4ABF-46B7-AFCE-78644C8152AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeCli", "ExcelBridgeCli\ExcelBridgeCli.csproj", "{B80D3190-BB7E-4E3C-B49A-4487F5AB2CEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeTestUnit", "ExcelBridgeTestUnit\ExcelBridgeTestUnit.csproj", "{C39E1C99-6998-4B8A-A909-05B24CC0E9C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeApi", "ExcelBridgeApi\ExcelBridgeApi.csproj", "{73A8667B-E7DC-47CA-994C-B0B5AABEACB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeApi", "ExcelBridgeApi\ExcelBridgeApi.csproj", "{BBB0AA17-0A37-4947-914B-DE7BD5977C60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeTestUnit", "ExcelBridgeTestUnit\ExcelBridgeTestUnit.csproj", "{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{860C74E8-4ABF-46B7-AFCE-78644C8152AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{860C74E8-4ABF-46B7-AFCE-78644C8152AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{860C74E8-4ABF-46B7-AFCE-78644C8152AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{860C74E8-4ABF-46B7-AFCE-78644C8152AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C39E1C99-6998-4B8A-A909-05B24CC0E9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C39E1C99-6998-4B8A-A909-05B24CC0E9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C39E1C99-6998-4B8A-A909-05B24CC0E9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C39E1C99-6998-4B8A-A909-05B24CC0E9C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BBB0AA17-0A37-4947-914B-DE7BD5977C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BBB0AA17-0A37-4947-914B-DE7BD5977C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BBB0AA17-0A37-4947-914B-DE7BD5977C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BBB0AA17-0A37-4947-914B-DE7BD5977C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B80D3190-BB7E-4E3C-B49A-4487F5AB2CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80D3190-BB7E-4E3C-B49A-4487F5AB2CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80D3190-BB7E-4E3C-B49A-4487F5AB2CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80D3190-BB7E-4E3C-B49A-4487F5AB2CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A8667B-E7DC-47CA-994C-B0B5AABEACB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A8667B-E7DC-47CA-994C-B0B5AABEACB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A8667B-E7DC-47CA-994C-B0B5AABEACB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A8667B-E7DC-47CA-994C-B0B5AABEACB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

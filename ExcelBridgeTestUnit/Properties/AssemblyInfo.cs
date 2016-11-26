@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de 
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("TestUnitExcelWriter")]
+[assembly: AssemblyTitle("ExcelBridgeTestUnit")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TestUnitExcelWriter")]
+[assembly: AssemblyProduct("ExcelBridgeTestUnit")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("c39e1c99-6998-4b8a-a909-05b24cc0e9c7")]
+[assembly: Guid("c2fafe32-fc67-44f7-9d75-06bc81fe4009")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //

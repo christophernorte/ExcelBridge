@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
@@ -10,11 +8,12 @@ using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace ExcelBridgeApi.Writer
 {
-    class WriterService
+    public class WriterProcessor
     {
         public void UpdateCell(string docName, string text, uint rowIndex, string columnName)
         {
-            try { 
+            try
+            {
                 // Open the document for editing.
                 using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true))
                 {
@@ -57,14 +56,14 @@ namespace ExcelBridgeApi.Writer
             }
 
             string relationshipId = sheets.First().Id.Value;
-            WorksheetPart worksheetPart = (WorksheetPart) document.WorkbookPart.GetPartById(relationshipId);
+            WorksheetPart worksheetPart = (WorksheetPart)document.WorkbookPart.GetPartById(relationshipId);
             return worksheetPart;
 
         }
 
         // Given a worksheet, a column name, and a row index, 
         // gets the cell at the specified column and 
-        private Cell GetCell(Worksheet worksheet,string columnName, uint rowIndex)
+        private Cell GetCell(Worksheet worksheet, string columnName, uint rowIndex)
         {
             Row row = GetRow(worksheet, rowIndex);
 
@@ -82,4 +81,5 @@ namespace ExcelBridgeApi.Writer
               Elements<Row>().Where(r => r.RowIndex == rowIndex).First();
         }
     }
+
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ExcelBridgeApi.Writer;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,11 @@ namespace ExcelBridgeTestUnit
         [TestMethod]
         public void Debit_WhenAmountIsMoreThanBalance_ShouldThrowArgumentOutOfRange()
         {
-            WriterService writer = new WriterService();
+            WriterProcessor writer = new WriterProcessor();
 
             for (uint i = 0; i < 100; i++)
             {
-                writer.UpdateCell("TestGraphe.xlsx", "insertByDotnet", i, "A");
+                writer.UpdateCell("FichierInOrig.xlsx", "insertByDotnet", i, "A");
                 Console.WriteLine("Current line : " + i);
             }
         }
