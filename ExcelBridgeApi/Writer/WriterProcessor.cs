@@ -10,14 +10,14 @@ namespace ExcelBridgeApi.Writer
 {
     public class WriterProcessor
     {
-        public void UpdateCell(string docName, string text, uint rowIndex, string columnName)
+        public void UpdateCell(string docName, string sheetName, string text, uint rowIndex, string columnName)
         {
             try
             {
                 // Open the document for editing.
                 using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true))
                 {
-                    WorksheetPart worksheetPart = this.GetWorksheetPartByName(spreadSheet, "Sheet2");
+                    WorksheetPart worksheetPart = this.GetWorksheetPartByName(spreadSheet, sheetName);
 
                     if (worksheetPart != null)
                     {

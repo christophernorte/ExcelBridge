@@ -25,7 +25,7 @@ namespace ExcelBridgeTestUnit
 
             for (uint i = 0; i < 100; i++)
             {
-                writer.UpdateCell("FichierInOrig.xlsx", "insertByDotnet", i, "A");
+                writer.UpdateCell("FichierInOrig.xlsx", "sheet2", "insertByDotnet", i, "A");
                 Console.WriteLine("Current line : " + i);
             }
         }
