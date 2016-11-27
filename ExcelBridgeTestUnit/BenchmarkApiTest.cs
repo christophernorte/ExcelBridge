@@ -17,13 +17,13 @@ namespace ExcelBridgeTestUnit
         [TestMethod]
         public void Debit_WhenAmountIsMoreThanBalance_ShouldThrowArgumentOutOfRange()
         {
-            WriterProcessor writer = new WriterProcessor();
+            //WriterProcessor writer = new WriterProcessor();
 
-            for (uint i = 0; i < 100; i++)
-            {
-                writer.UpdateCell("FichierInOrig.xlsx", "sheet2", "insertByDotnet", i, "A");
-                Console.WriteLine("Current line : " + i);
-            }
+            //for (uint i = 0; i < 100; i++)
+            //{
+            //    writer.UpdateCell("FichierInOrig.xlsx", "sheet2", "insertByDotnet", i, "A");
+            //    Console.WriteLine("Current line : " + i);
+            //}
         }
 
         [TestCleanup]

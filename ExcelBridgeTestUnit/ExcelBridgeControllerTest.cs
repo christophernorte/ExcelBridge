@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ExcelBridgeCli;
+using ExcelBridgeCli.Exceptions;
 
 namespace ExcelBridgeTestUnit
 {
@@ -18,8 +19,45 @@ namespace ExcelBridgeTestUnit
         public void cell_InjectGoodArgument_ShouldEndWithExcelFileCellUpdated()
         {
             ExcelBridgeCliController ExcelBridgeController = new ExcelBridgeCliController();
+            ExcelBridgeController.Start(new string[] { "-m", "cell", "-e", "FichierInOrig.xlsx", "-s", "Sheet2", "-c", "A1", "-v", "InsertedFromTest" });
+        }
 
-            ExcelBridgeController.Start(new string[] { "-m cell", "-e path" });
+        [TestMethod]
+        public void cell_InjectBadArgument_ShouldStopProcess()
+        {
+            try
+            {
+                ExcelBridgeCliController ExcelBridgeController = new ExcelBridgeCliController();
+                ExcelBridgeController.Start(new string[] { "-m", "cell", "-e", "FichierInOrig.xlsx", "-s", "Sheet2", "-c", "A1" });
+                Assert.Fail("An exception should have been thrown");
+            }
+            catch (CliArgumentMissing ae)
+            {
+                Assert.AreEqual("Value argument is mandatory in cell mode", ae.Message);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(string.Format("Unexpected exception of type {0} caught: {1}", e.GetType(), e.Message));
+            }
+        }
+
+        [TestMethod]
+        public void cell_InjectBadCellArgument_ShouldStopProcess()
+        {
+            try
+            {
+                ExcelBridgeCliController ExcelBridgeController = new ExcelBridgeCliController();
+                ExcelBridgeController.Start(new string[] { "-m", "cell", "-e", "FichierInOrig.xlsx", "-s", "Sheet2", "-c", "AAA", "-v", "InsertedFromTest" });
+                Assert.Fail("An exception should have been thrown");
+            }
+            catch (CliArgumentCellBadFormat ae)
+            {
+                Assert.AreEqual("Cell argument must be an excel identifier with a letter and a numeric [AAA] given", ae.Message);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(string.Format("Unexpected exception of type {0} caught: {1}", e.GetType(), e.Message));
+            }
         }
 
         [TestCleanup]

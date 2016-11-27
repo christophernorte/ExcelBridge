@@ -67,6 +67,8 @@
     <Compile Include="Argument\Options.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="ExcelBridgeCliController.cs" />
+    <Compile Include="Exceptions\CliArgumentCellBadFormat.cs" />
+    <Compile Include="Exceptions\CliArgumentMissing.cs" />
     <Compile Include="Model\Cell.cs" />
     <Compile Include="Model\Range.cs" />
     <Compile Include="ModeRunner\ModeRunner.cs" />

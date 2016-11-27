@@ -1,12 +1,4 @@
-﻿using ExcelBridgeApi;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ExcelBridgeApi.Writer;
-using ExcelBridgeCli.Argument;
-using ExcelBridgeCli.ModeRunner;
+﻿using ExcelBridgeCli.Exceptions;
 
 namespace ExcelBridgeCli
 {
@@ -14,9 +6,17 @@ namespace ExcelBridgeCli
     {
         static void Main(string[] args)
         {
-            ExcelBridgeCliController ExcelBridgeController = new ExcelBridgeCliController();
-            ExcelBridgeController.Start(args);
-            //string line = Console.ReadLine();
+            try {
+                ExcelBridgeCliController ExcelBridgeController = new ExcelBridgeCliController();
+                ExcelBridgeController.Start(args);
+            }
+            catch (CliArgumentMissing e)
+            {
+                System.Console.Error.WriteLine(e.Message);
+            }catch(CliArgumentCellBadFormat e)
+            {
+                System.Console.Error.WriteLine(e.Message);
+            }
         }
 
     }
