@@ -10,10 +10,9 @@ namespace ExcelBridgeCli.ModeRunner
 {
     public class ModeRunnerFactory
     {
-        public static ModeRunner getRunner(string mode, Options options)
+        public static IModeRunner getRunner(string mode, Options options)
         {
-            ModeRunner ModeRunner; 
-
+            mode = mode.ToLower();
             switch (mode)
             {
                 case "cell":

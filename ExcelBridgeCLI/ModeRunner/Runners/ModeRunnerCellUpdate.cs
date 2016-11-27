@@ -7,15 +7,17 @@ using ExcelBridgeCli.Argument;
 
 namespace ExcelBridgeCli.ModeRunner.Runners
 {
-    public class ModeRunnerCellUpdate : ModeRunnerAbstract,ModeRunner
+    public class ModeRunnerCellUpdate : ModeRunnerAbstract,IModeRunner
     {
         public ModeRunnerCellUpdate(Options options) : base(options)
         {
+            
         }
 
-        public ModeRunnerResponse Run(Options option)
+        public ModeRunnerResponse Run()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Cell update");
+            return new ModeRunnerResponse();
         }
     }
 }

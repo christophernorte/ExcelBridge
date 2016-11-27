@@ -2,8 +2,8 @@
 
 namespace ExcelBridgeCli.ModeRunner
 {
-    public interface ModeRunner
+    public interface IModeRunner
     {
-        ModeRunnerResponse Run(Options option);
+        ModeRunnerResponse Run();
     }
 }
