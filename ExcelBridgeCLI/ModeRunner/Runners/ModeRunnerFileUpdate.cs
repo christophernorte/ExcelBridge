@@ -19,5 +19,10 @@ namespace ExcelBridgeCli.ModeRunner.Runners
             Console.WriteLine("File update");
             return new ModeRunnerResponse();
         }
+
+        public void ValidateOptions()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

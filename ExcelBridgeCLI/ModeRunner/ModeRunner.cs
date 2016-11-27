@@ -5,5 +5,7 @@ namespace ExcelBridgeCli.ModeRunner
     public interface IModeRunner
     {
         ModeRunnerResponse Run();
+
+        void ValidateOptions();
     }
 }

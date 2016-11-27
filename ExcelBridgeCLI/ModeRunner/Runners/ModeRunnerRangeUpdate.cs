@@ -18,5 +18,10 @@ namespace ExcelBridgeCli.ModeRunner.Runners
             Console.WriteLine("Range update");
             return new ModeRunnerResponse();
         }
+
+        public void ValidateOptions()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

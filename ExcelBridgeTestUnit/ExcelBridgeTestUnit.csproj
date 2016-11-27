@@ -41,13 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BenchmarkTest.cs" />
+    <Compile Include="BenchmarkApiTest.cs" />
+    <Compile Include="ExcelBridgeControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExcelBridgeApi\ExcelBridgeApi.csproj">
       <Project>{73a8667b-e7dc-47ca-994c-b0b5aabeacb8}</Project>
       <Name>ExcelBridgeApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelBridgeCli\ExcelBridgeCli.csproj">
+      <Project>{b80d3190-bb7e-4e3c-b49a-4487f5ab2cee}</Project>
+      <Name>ExcelBridgeCli</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

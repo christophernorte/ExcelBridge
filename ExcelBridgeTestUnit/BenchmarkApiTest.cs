@@ -1,15 +1,11 @@
 ﻿using ExcelBridgeApi.Writer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExcelBridgeTestUnit
 {
     [TestClass]
-    public class BenchmarkTest
+    public class BenchmarkApiTest
     {
 
         [TestInitialize]

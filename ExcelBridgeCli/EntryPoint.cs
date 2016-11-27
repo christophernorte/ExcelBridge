@@ -14,21 +14,10 @@ namespace ExcelBridgeCli
     {
         static void Main(string[] args)
         {
-            var options = new Options();
-            if (CommandLine.Parser.Default.ParseArguments(args, options))
-            {
-                IModeRunner modeRunner = ModeRunnerFactory.getRunner(options.Mode,options);
-                modeRunner.Run();
-            }
-            /*
-            WriterProcessor writer = new WriterProcessor();
-
-            for (uint i = 1; i < 100; i++)
-            {
-                writer.UpdateCell("FichierInOrig.xlsx","sheet2", "insertByDotnet", i, "A");
-                Console.WriteLine("Current line : " + i);
-            }*/
+            ExcelBridgeCliController ExcelBridgeController = new ExcelBridgeCliController();
+            ExcelBridgeController.Start(args);
             //string line = Console.ReadLine();
         }
+
     }
 }

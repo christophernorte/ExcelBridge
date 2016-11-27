@@ -19,5 +19,10 @@ namespace ExcelBridgeCli.ModeRunner.Runners
             Console.WriteLine("Cell update");
             return new ModeRunnerResponse();
         }
+
+        public void ValidateOptions()
+        {
+            
+        }
     }
 }
