@@ -1,30 +1,15 @@
-﻿using ExcelBridgeApi.Writer;
-using ExcelBridgeCli.Argument;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ExcelBridgeCli.ModeRunner.Runners
+namespace ExcelBridgeApi.Tools
 {
-    public abstract class ModeRunnerAbstract
+    class CellHelper
     {
-        protected Options options;
-        protected WriterProcessor writer;
-
-        public ModeRunnerAbstract()
-        {
-            this.writer = new WriterProcessor();
-        }
-
-        public ModeRunnerAbstract(Options options) : this()
-        {
-            this.options = options;
-        }
-
-        protected string getCellStringPart(string rawCell)
+        public static string getCellStringPart(string rawCell)
         {
             Regex regex = new Regex(@"[a-zA-Z]+");
             Match match = regex.Match(rawCell);
@@ -38,7 +23,7 @@ namespace ExcelBridgeCli.ModeRunner.Runners
             }
         }
 
-        protected uint getCellNumericPart(string rawCell)
+        public static uint getCellNumericPart(string rawCell)
         {
             Regex regex = new Regex(@"[\d]");
             Match match = regex.Match(rawCell);
@@ -56,6 +41,5 @@ namespace ExcelBridgeCli.ModeRunner.Runners
                 return 0;
             }
         }
-
     }
 }

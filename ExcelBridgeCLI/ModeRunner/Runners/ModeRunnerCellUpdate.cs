@@ -19,44 +19,11 @@ namespace ExcelBridgeCli.ModeRunner.Runners
 
         public ModeRunnerResponse Run()
         {
-            string cellLetterPart = getCellStringPart(options.Cell);
-            uint cellNumericPart = getCellNumericPart(options.Cell);
+            string cellLetterPart = this.getCellStringPart(options.Cell);
+            uint cellNumericPart = this.getCellNumericPart(options.Cell);
 
             writer.UpdateCell(options.ExcelFilePath, options.SheetName, options.Value, cellNumericPart, cellLetterPart);
             return new ModeRunnerResponse();
-        }
-
-        private string getCellStringPart(string rawCell)
-        {
-            Regex regex = new Regex(@"[a-zA-Z]+");
-            Match match = regex.Match(rawCell);
-            if(match.Success)
-            {
-                return match.Value;
-            }
-            else
-            {
-                return "";
-            }
-        }
-
-        private uint getCellNumericPart(string rawCell)
-        {
-            Regex regex = new Regex(@"[\d]");
-            Match match = regex.Match(rawCell);
-            if (match.Success)
-            {
-                uint value = 0;
-                if(uint.TryParse(match.Value,out value))
-                {
-                    return value;
-                }
-                return value;
-            }
-            else
-            {
-                return 0;
-            }
         }
 
         public void ValidateOptions()

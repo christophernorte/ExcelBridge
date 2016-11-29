@@ -23,6 +23,14 @@ namespace ExcelBridgeTestUnit
         }
 
         [TestMethod]
+        public void cell_ExecuteInRangeMode_ShouldEndWithExcelFileCellUpdated()
+        {
+            ExcelBridgeCliController ExcelBridgeController = new ExcelBridgeCliController();
+            ExcelBridgeController.Start(new string[] { "-m", "range", "-e", "FichierInOrig.xlsx", "-s", "Sheet2", "-v", "InsertedFromTest" });
+        }
+
+
+        [TestMethod]
         public void cell_InjectBadArgument_ShouldStopProcess()
         {
             try
