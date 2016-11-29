@@ -60,6 +60,20 @@ namespace ExcelBridgeTestUnit
             }
         }
 
+        [TestMethod]
+        public void cell_InjectGoodCellArgument_ShouldPassArgumentValidationProcess()
+        {
+            try
+            {
+                ExcelBridgeCliController ExcelBridgeController = new ExcelBridgeCliController();
+                ExcelBridgeController.Start(new string[] { "-m", "cell", "-e", "FichierInOrig.xlsx", "-s", "Sheet2", "-c", "A2", "-v", "InsertedFromTest" });
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(string.Format("Unexpected exception of type {0} caught: {1}", e.GetType(), e.Message));
+            }
+        }
+
         [TestCleanup]
         public void TestCleanup()
         {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ExcelBridgeCli.Argument;
 using ExcelBridgeCli.Exceptions;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace ExcelBridgeCli.ModeRunner.Runners
 {
@@ -18,8 +19,44 @@ namespace ExcelBridgeCli.ModeRunner.Runners
 
         public ModeRunnerResponse Run()
         {
-            writer.UpdateCell(options.ExcelFilePath, options.SheetName, options.Value, 1, "A");
+            string cellLetterPart = getCellStringPart(options.Cell);
+            uint cellNumericPart = getCellNumericPart(options.Cell);
+
+            writer.UpdateCell(options.ExcelFilePath, options.SheetName, options.Value, cellNumericPart, cellLetterPart);
             return new ModeRunnerResponse();
+        }
+
+        private string getCellStringPart(string rawCell)
+        {
+            Regex regex = new Regex(@"[a-zA-Z]+");
+            Match match = regex.Match(rawCell);
+            if(match.Success)
+            {
+                return match.Value;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        private uint getCellNumericPart(string rawCell)
+        {
+            Regex regex = new Regex(@"[\d]");
+            Match match = regex.Match(rawCell);
+            if (match.Success)
+            {
+                uint value = 0;
+                if(uint.TryParse(match.Value,out value))
+                {
+                    return value;
+                }
+                return value;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public void ValidateOptions()
@@ -44,24 +81,9 @@ namespace ExcelBridgeCli.ModeRunner.Runners
 
         private void ValidateCell(string cell)
         {
-            bool hasString = false;
-            bool hasNum = false;
+            Regex regex = new Regex(@"^[a-zA-Z]+[\d]+$");
 
-            StringReader sr = new StringReader(cell);
-            foreach (char c in cell)
-            {
-                if (Char.IsDigit(c) || Char.IsNumber(c))
-                {
-                    hasNum = true;
-                }
-
-                if (Char.IsLetter(c))
-                {
-                    hasString = true;
-                }
-            }
-
-            if (!hasNum || !hasString)
+            if (!regex.IsMatch(cell))
             {
                 throw new CliArgumentCellBadFormat("Cell argument must be an excel identifier with a letter and a numeric [" + cell+ "] given");
             }
