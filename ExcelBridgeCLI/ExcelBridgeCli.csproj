@@ -51,8 +51,9 @@
     <StartupObject>ExcelBridgeCli.EntryPoint</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CommandLine">
-      <HintPath>..\..\..\..\..\Downloads\libcmdline-1.9.71.2-stable\CommandLine\src\libcmdline\bin\Release\CommandLine.dll</HintPath>
+    <Reference Include="CommandLine, Version=1.9.71.2, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,8 +70,6 @@
     <Compile Include="ExcelBridgeCliController.cs" />
     <Compile Include="Exceptions\CliArgumentCellBadFormat.cs" />
     <Compile Include="Exceptions\CliArgumentMissing.cs" />
-    <Compile Include="Model\Cell.cs" />
-    <Compile Include="Model\Range.cs" />
     <Compile Include="ModeRunner\ModeRunner.cs" />
     <Compile Include="ModeRunner\ModeRunnerFactory.cs" />
     <Compile Include="ModeRunner\ModeRunnerResponse.cs" />
@@ -82,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExcelBridgeApi\ExcelBridgeApi.csproj">

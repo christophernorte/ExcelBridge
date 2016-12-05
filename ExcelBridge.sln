@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeApi", "ExcelBrid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeTestUnit", "ExcelBridgeTestUnit\ExcelBridgeTestUnit.csproj", "{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelBridgeCore", "ExcelBridgeCore\ExcelBridgeCore.csproj", "{EFA0AED1-B651-4EB5-8949-6B943CCA8C1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2FAFE32-FC67-44F7-9D75-06BC81FE4009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA0AED1-B651-4EB5-8949-6B943CCA8C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA0AED1-B651-4EB5-8949-6B943CCA8C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA0AED1-B651-4EB5-8949-6B943CCA8C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA0AED1-B651-4EB5-8949-6B943CCA8C1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

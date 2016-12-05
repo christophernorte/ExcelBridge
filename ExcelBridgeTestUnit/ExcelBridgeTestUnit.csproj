@@ -54,6 +54,10 @@
       <Project>{b80d3190-bb7e-4e3c-b49a-4487f5ab2cee}</Project>
       <Name>ExcelBridgeCli</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcelBridgeCore\ExcelBridgeCore.csproj">
+      <Project>{efa0aed1-b651-4eb5-8949-6b943cca8c1f}</Project>
+      <Name>ExcelBridgeCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

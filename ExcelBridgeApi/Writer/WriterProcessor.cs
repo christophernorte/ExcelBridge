@@ -5,6 +5,7 @@ using System.Linq;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using ExcelBridgeCore.Model;
 
 namespace ExcelBridgeApi.Writer
 {
@@ -40,6 +41,78 @@ namespace ExcelBridgeApi.Writer
                 Console.Error.WriteLine(e.ToString());
             }
 
+        }
+
+        public void UpdateRange(string docName, string sheetName, Range range)
+        {
+            try
+            {
+                // Open the document for editing.
+                using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true))
+                {
+                    WorksheetPart worksheetPart = this.GetWorksheetPartByName(spreadSheet, sheetName);
+
+                    if (worksheetPart != null)
+                    {
+                        foreach (CellCore cellCore in range.ListCellCore)
+                        {
+                            Cell cell = GetCell(worksheetPart.Worksheet, range.Colonne, cellCore.RawIndex);
+
+                            cell.CellValue = new CellValue(cellCore.Value);
+                            cell.DataType = new EnumValue<CellValues>(CellValues.Number);
+                        }
+                        
+
+                        // Save the worksheet.
+                        worksheetPart.Worksheet.Save();
+                    }
+                }
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.Error.WriteLine(e.ToString());
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine(e.ToString());
+            }
+        }
+
+        public void UpdateListOfRange(string docName, string sheetName, List<Range> listRange)
+        {
+            try
+            {
+                // Open the document for editing.
+                using (SpreadsheetDocument spreadSheet = SpreadsheetDocument.Open(docName, true))
+                {
+                    WorksheetPart worksheetPart = this.GetWorksheetPartByName(spreadSheet, sheetName);
+
+                    if (worksheetPart != null)
+                    {
+                        foreach (Range range in listRange)
+                        {
+                            foreach (CellCore cellCore in range.ListCellCore)
+                            {
+                                Cell cell = GetCell(worksheetPart.Worksheet, range.Colonne, cellCore.RawIndex);
+
+                                cell.CellValue = new CellValue(cellCore.Value);
+                                cell.DataType = new EnumValue<CellValues>(CellValues.Number);
+                            }
+                        }
+
+                        // Save the worksheet.
+                        worksheetPart.Worksheet.Save();
+                    }
+                }
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.Error.WriteLine(e.ToString());
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine(e.ToString());
+            }
         }
 
         private WorksheetPart GetWorksheetPartByName(SpreadsheetDocument document, string sheetName)
@@ -79,6 +152,12 @@ namespace ExcelBridgeApi.Writer
         {
             return worksheet.GetFirstChild<SheetData>().
               Elements<Row>().Where(r => r.RowIndex == rowIndex).First();
+        }
+
+        // Given a worksheet and a row index, return the row.
+        private Row GetColumn(Worksheet worksheet, uint rowIndex)
+        {
+            return null;
         }
     }
 
